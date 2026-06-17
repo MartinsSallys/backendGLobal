@@ -29,13 +29,12 @@ def test_read_users(client):
     print(response.json())
     assert response.status_code == HTTPStatus.OK
     assert response.json() == [
-            {
-                'id': 1,
-                'username': 'string',
-                'email': 'user@example.com',
-            }
-        ]
-
+        {
+            'id': 1,
+            'username': 'string',
+            'email': 'user@example.com',
+        }
+    ]
 
 
 def test_read_user(client):
@@ -60,12 +59,12 @@ def test_update_user(client):
     )
     print(response.json())
     assert response.status_code == HTTPStatus.OK
-    assert response.json() =={
+    assert response.json() == {
         'id': 1,
         'username': 'string',
         'email': 'user@example.com',
     }
-    
+
 
 def test_delete_user(client):
     response = client.delete('/users/1')
